@@ -1,0 +1,12 @@
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\obj\Debug\Proporciones.vbprojAssemblyReference.cache
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\obj\Debug\Proporciones.Form1.resources
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\obj\Debug\Proporciones.Resources.resources
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\obj\Debug\Proporciones.vbproj.GenerateResource.cache
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\obj\Debug\Proporciones.vbproj.CoreCompileInputs.cache
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\bin\Debug\Proporciones.exe.config
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\bin\Debug\Proporciones.exe
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\bin\Debug\Proporciones.pdb
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\bin\Debug\Proporciones.xml
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\obj\Debug\Proporciones.exe
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\obj\Debug\Proporciones.xml
+C:\Users\santi\source\repos\SOLUCIONWF\Proporciones\obj\Debug\Proporciones.pdb
