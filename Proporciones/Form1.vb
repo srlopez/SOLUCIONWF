@@ -1,7 +1,6 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         setSize(400, 200)
-
     End Sub
 
     Private Sub AddControl(item As (valor As Integer, ancho As Integer, alto As Integer, x As Integer, y As Integer))
@@ -34,7 +33,6 @@
         txtAlto.Text = pnlPresentacion.Height
         txtAncho.Text = pnlPresentacion.Width
     End Sub
-
 
     Private Sub btnWMinus_Click(sender As Object, e As EventArgs) Handles btnWMinus.Click
         setSize(pnlPresentacion.Width - 10, pnlPresentacion.Height)
@@ -91,6 +89,7 @@
         Dim alto As Integer = CInt(txtAlto.Text)
 
         Dim area = (ancho:=ancho, alto:=alto, x:=0, y:=0)
+        ConsoleLogList(resultado)
         ListaDeEnterosA2Dimensiones(resultado, area)
 
         '4 confirmar que las areas son iguales
@@ -143,6 +142,8 @@
                 s1 += item.valor
             End If
         Next
+        ConsoleLogList(l0)
+        ConsoleLogList(l1)
 
         '3.- ahora tenemos Dos listas l0 y l1, y su suma s0 y s1
         ' Repartimos el área entre estos valores ' Regla de 3
@@ -184,5 +185,13 @@
         list.AddRange(l1)
     End Sub
 
-
+    Sub ConsoleLogList(list As List(Of (valor As Integer, ancho As Integer, alto As Integer, x As Integer, y As Integer)))
+        Static i As Integer = 0
+        i += 1
+        Console.Write($"#{i}({list.Count})[ ")
+        For Each item In list
+            Console.Write($"{item.valor} ")
+        Next
+        Console.WriteLine("]")
+    End Sub
 End Class

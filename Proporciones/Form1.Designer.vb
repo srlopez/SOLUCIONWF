@@ -67,7 +67,7 @@ Partial Class Form1
         'txtAncho
         '
         Me.txtAncho.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAncho.Location = New System.Drawing.Point(85, 113)
+        Me.txtAncho.Location = New System.Drawing.Point(85, 111)
         Me.txtAncho.Name = "txtAncho"
         Me.txtAncho.Size = New System.Drawing.Size(40, 29)
         Me.txtAncho.TabIndex = 3
@@ -106,9 +106,9 @@ Partial Class Form1
         'btnWplus
         '
         Me.btnWplus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnWplus.Location = New System.Drawing.Point(125, 112)
+        Me.btnWplus.Location = New System.Drawing.Point(125, 108)
         Me.btnWplus.Name = "btnWplus"
-        Me.btnWplus.Size = New System.Drawing.Size(23, 30)
+        Me.btnWplus.Size = New System.Drawing.Size(23, 34)
         Me.btnWplus.TabIndex = 7
         Me.btnWplus.Text = "+"
         Me.btnWplus.UseVisualStyleBackColor = True
@@ -116,9 +116,9 @@ Partial Class Form1
         'btnWMinus
         '
         Me.btnWMinus.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnWMinus.Location = New System.Drawing.Point(62, 112)
+        Me.btnWMinus.Location = New System.Drawing.Point(62, 108)
         Me.btnWMinus.Name = "btnWMinus"
-        Me.btnWMinus.Size = New System.Drawing.Size(23, 30)
+        Me.btnWMinus.Size = New System.Drawing.Size(23, 34)
         Me.btnWMinus.TabIndex = 8
         Me.btnWMinus.Text = "-"
         Me.btnWMinus.TextAlign = System.Drawing.ContentAlignment.TopCenter
