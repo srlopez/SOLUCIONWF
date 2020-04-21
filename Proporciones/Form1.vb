@@ -135,15 +135,44 @@
         Dim s0 As Integer = 0
         Dim s1 As Integer = 0
 
-        For Each item In list
-            If s0 < s1 Then
-                l0.Add(item)
-                s0 += item.valor
+        'For Each item In list
+        '   If s0 < s1 Then
+        '      l0.Add(item)
+        '      s0 += item.valor
+        '   Else
+        '      l1.Add(item)
+        '      s1 += item.valor
+        '   End If
+        'Next
+
+        ' El mismo algoritmo pero si dos items tiene el mismo valor se mantienen en la misma lista
+        Dim l = {l0, l1}
+        Dim s = {s0, s1}
+        Dim n = 0 ' indice de tabla
+        Dim ultimo = list(0)
+        l(n).Add(ultimo)
+        s(n) += ultimo.valor
+        For i = 1 To list.Count - 1
+            If ultimo.valor = list(i).valor Then
+                n = n 'n = (++n \ 2)
+            ElseIf s(0) < s(1) Then
+                n = 0
             Else
-                l1.Add(item)
-                s1 += item.valor
+                n = 1
             End If
+            If i = list.Count - 1 Then
+                Dim a = 0
+                If l(a).Count <> 0 Then a = 1
+                n = a
+            End If
+            ultimo = list(i)
+            l(n).Add(ultimo)
+            s(n) += ultimo.valor
+
         Next
+        s0 = s(0)
+        s1 = s(1)
+
         ConsoleLogList(l0)
         ConsoleLogList(l1)
 
