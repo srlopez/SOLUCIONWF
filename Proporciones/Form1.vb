@@ -12,8 +12,7 @@
             .TextAlign = ContentAlignment.MiddleCenter
             .BorderStyle = BorderStyle.FixedSingle
             .Font = lblValores.Font
-            .ForeColor = Color.Blue
-
+            .ForeColor = Color.IndianRed
         End With
         Dim myToolTip As New ToolTip
         myToolTip.SetToolTip(myCrtl, $"{item.ancho * item.alto}" + vbCrLf +
@@ -26,7 +25,7 @@
     Sub setSize(ancho As Int16, alto As Int16)
         pnlPresentacion.Width = ancho
         pnlPresentacion.Height = alto
-        txtLista.Width = Math.Max(ancho, 250)
+        txtLista.Width = Math.Max(ancho, 300)
         btnGenerar.Left = txtLista.Left + txtLista.Width - btnGenerar.Width
         Me.Width = txtLista.Width + (2 * txtLista.Left) + 20
         Me.Height = pnlPresentacion.Top + pnlPresentacion.Height + 110
@@ -77,10 +76,14 @@
         values.Sort()
         values.Reverse()
 
-        '3 Corvertir la lista a 2 dimensiones
+        '3 Convertir la lista a 2 dimensiones
         '3.1 Preparamos la lista de resultado como un tupla!!!!! con nombre
         ' https://docs.microsoft.com/es-es/dotnet/visual-basic/programming-guide/language-features/data-types/tuples
-        Dim resultado = New List(Of (valor As Integer, ancho As Integer, alto As Integer, x As Integer, y As Integer))
+        Dim resultado = New List(Of (valor As Integer,
+                                    ancho As Integer,
+                                    alto As Integer,
+                                    x As Integer,
+                                    y As Integer))
         For Each val As Integer In values
             resultado.Add((valor:=val, 0, 0, 0, 0))
         Next
@@ -112,7 +115,6 @@
         End If
 
     End Sub
-
 
     Private Sub ListaDeEnterosA2Dimensiones(ByRef list As List(Of (valor As Integer, ancho As Integer, alto As Integer, x As Integer, y As Integer)), area As (ancho As Integer, alto As Integer, x As Integer, y As Integer))
         '1.- primer control de la recursividad
@@ -194,4 +196,6 @@
         Next
         Console.WriteLine("]")
     End Sub
+
+
 End Class
