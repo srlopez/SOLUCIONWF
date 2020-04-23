@@ -43,13 +43,17 @@ Public Class FormBase
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        usuarios.Clear()
+
         lstUsuarios.Items.Clear()
         cmbSelect.Items.Clear()
-        usuarios.Clear()
+        flPanel.Controls.Clear()
+
         usuarios = SelectUsuariosLIKE(txtBuscar.Text)
         For Each item In usuarios
             lstUsuarios.Items.Add(item.Item2)
             cmbSelect.Items.Add(item.Item2)
+            flPanel.Controls.Add(AddControl(item.Item2, item.Item1))
         Next
     End Sub
 
@@ -92,4 +96,35 @@ Public Class FormBase
     Private Sub btnAbrirMain_Click(sender As Object, e As EventArgs) Handles btnAbrirMain.Click
         FormUsuarios.Show()
     End Sub
+
+
+    Private Sub theButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        ' Handle your Button clicks here
+        MsgBox("HOLA SOY EL BOTON" + vbCrLf +
+               sender.Text + vbCrLf +
+               "ID: " + sender.tag)
+        Console.WriteLine(sender)
+        Console.WriteLine(e)
+    End Sub
+
+    Function AddControl(nombre As String, id As String) As Button
+        Dim myCrtl As New Button
+        With myCrtl
+            .Size = New Size(100, 100)
+            .Text = nombre
+            .TextAlign = ContentAlignment.BottomCenter
+            .Font = lblBuscar.Font
+            .ForeColor = Color.IndianRed
+            .Tag = id
+            '.Image = Access.WinForm.My.Resources.Resources.pnglogo2
+            '.ImageAlign = ContentAlignment.BottomCenter
+            .BackgroundImageLayout = ImageLayout.Zoom
+            .BackgroundImage = Access.WinForm.My.Resources.Resources.pnglogo2
+        End With
+        AddHandler myCrtl.Click, AddressOf Me.theButton_Click
+        Dim myToolTip As New ToolTip
+        myToolTip.SetToolTip(myCrtl, $"{nombre}")
+
+        Return myCrtl
+    End Function
 End Class

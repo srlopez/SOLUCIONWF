@@ -39,6 +39,7 @@ Partial Class FormBase
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.cmbSelect = New System.Windows.Forms.ComboBox()
         Me.btnAbrirMain = New System.Windows.Forms.Button()
+        Me.flPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.SuspendLayout()
         '
         'txtNombre
@@ -202,18 +203,28 @@ Partial Class FormBase
         '
         Me.btnAbrirMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAbrirMain.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnAbrirMain.Location = New System.Drawing.Point(217, 371)
+        Me.btnAbrirMain.Location = New System.Drawing.Point(415, 48)
         Me.btnAbrirMain.Name = "btnAbrirMain"
-        Me.btnAbrirMain.Size = New System.Drawing.Size(207, 65)
+        Me.btnAbrirMain.Size = New System.Drawing.Size(184, 29)
         Me.btnAbrirMain.TabIndex = 19
         Me.btnAbrirMain.Text = "Main"
         Me.btnAbrirMain.UseVisualStyleBackColor = True
+        '
+        'flPanel
+        '
+        Me.flPanel.AutoScroll = True
+        Me.flPanel.AutoSize = True
+        Me.flPanel.Location = New System.Drawing.Point(124, 357)
+        Me.flPanel.Name = "flPanel"
+        Me.flPanel.Size = New System.Drawing.Size(475, 158)
+        Me.flPanel.TabIndex = 20
         '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(675, 501)
+        Me.ClientSize = New System.Drawing.Size(731, 644)
+        Me.Controls.Add(Me.flPanel)
         Me.Controls.Add(Me.btnAbrirMain)
         Me.Controls.Add(Me.cmbSelect)
         Me.Controls.Add(Me.btnNuevo)
@@ -254,4 +265,5 @@ Partial Class FormBase
     Friend WithEvents btnNuevo As Button
     Friend WithEvents cmbSelect As ComboBox
     Friend WithEvents btnAbrirMain As Button
+    Friend WithEvents flPanel As FlowLayoutPanel
 End Class
