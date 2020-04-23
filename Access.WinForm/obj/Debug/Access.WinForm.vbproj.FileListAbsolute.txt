@@ -22,3 +22,4 @@ C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.e
 C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.xml
 C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.pdb
 C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.FormBase.resources
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.Form1.resources

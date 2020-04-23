@@ -25,13 +25,13 @@ Partial Class FormUsuarios
         Me.components = New System.ComponentModel.Container()
         Dim BindingNavigatorPositionItem As System.Windows.Forms.ToolStripTextBox
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUsuarios))
-        Me.TextBoxID = New System.Windows.Forms.TextBox()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.LabelID = New System.Windows.Forms.Label()
         Me.LabelNombre = New System.Windows.Forms.Label()
-        Me.TextBoxNombre = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.LabelFecha = New System.Windows.Forms.Label()
-        Me.TextBoxFecha = New System.Windows.Forms.TextBox()
-        Me.ButtonCerrar = New System.Windows.Forms.Button()
+        Me.txtFecha = New System.Windows.Forms.TextBox()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.BindingNavigatorUsuarios = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -45,6 +45,7 @@ Partial Class FormUsuarios
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingSourcePropietarios = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewMascotas = New System.Windows.Forms.DataGridView()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
         CType(Me.BindingNavigatorUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigatorUsuarios.SuspendLayout()
@@ -62,80 +63,87 @@ Partial Class FormUsuarios
         BindingNavigatorPositionItem.Text = "0"
         BindingNavigatorPositionItem.ToolTipText = "Posición actual"
         '
-        'TextBoxID
+        'txtID
         '
-        Me.TextBoxID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBoxID.Location = New System.Drawing.Point(99, 12)
-        Me.TextBoxID.Name = "TextBoxID"
-        Me.TextBoxID.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxID.TabIndex = 0
+        Me.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtID.Enabled = False
+        Me.txtID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtID.Location = New System.Drawing.Point(182, 12)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(303, 26)
+        Me.txtID.TabIndex = 0
         '
         'LabelID
         '
         Me.LabelID.AutoSize = True
-        Me.LabelID.Location = New System.Drawing.Point(80, 15)
+        Me.LabelID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelID.Location = New System.Drawing.Point(150, 18)
         Me.LabelID.Name = "LabelID"
-        Me.LabelID.Size = New System.Drawing.Size(18, 13)
+        Me.LabelID.Size = New System.Drawing.Size(26, 20)
         Me.LabelID.TabIndex = 1
         Me.LabelID.Text = "ID"
         '
         'LabelNombre
         '
         Me.LabelNombre.AutoSize = True
-        Me.LabelNombre.Location = New System.Drawing.Point(54, 41)
+        Me.LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelNombre.Location = New System.Drawing.Point(115, 47)
         Me.LabelNombre.Name = "LabelNombre"
-        Me.LabelNombre.Size = New System.Drawing.Size(44, 13)
+        Me.LabelNombre.Size = New System.Drawing.Size(65, 20)
         Me.LabelNombre.TabIndex = 3
         Me.LabelNombre.Text = "Nombre"
         '
-        'TextBoxNombre
+        'txtNombre
         '
-        Me.TextBoxNombre.Location = New System.Drawing.Point(99, 38)
-        Me.TextBoxNombre.Name = "TextBoxNombre"
-        Me.TextBoxNombre.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxNombre.TabIndex = 2
+        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.Location = New System.Drawing.Point(182, 41)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(303, 26)
+        Me.txtNombre.TabIndex = 2
         '
         'LabelFecha
         '
         Me.LabelFecha.AutoSize = True
-        Me.LabelFecha.Location = New System.Drawing.Point(61, 67)
+        Me.LabelFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelFecha.Location = New System.Drawing.Point(126, 76)
         Me.LabelFecha.Name = "LabelFecha"
-        Me.LabelFecha.Size = New System.Drawing.Size(37, 13)
+        Me.LabelFecha.Size = New System.Drawing.Size(54, 20)
         Me.LabelFecha.TabIndex = 5
         Me.LabelFecha.Text = "Fecha"
         '
-        'TextBoxFecha
+        'txtFecha
         '
-        Me.TextBoxFecha.Location = New System.Drawing.Point(99, 64)
-        Me.TextBoxFecha.Name = "TextBoxFecha"
-        Me.TextBoxFecha.Size = New System.Drawing.Size(100, 20)
-        Me.TextBoxFecha.TabIndex = 4
+        Me.txtFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFecha.Location = New System.Drawing.Point(182, 70)
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.Size = New System.Drawing.Size(303, 26)
+        Me.txtFecha.TabIndex = 4
         '
-        'ButtonCerrar
+        'btnClose
         '
-        Me.ButtonCerrar.Location = New System.Drawing.Point(355, 311)
-        Me.ButtonCerrar.Name = "ButtonCerrar"
-        Me.ButtonCerrar.Size = New System.Drawing.Size(60, 23)
-        Me.ButtonCerrar.TabIndex = 8
-        Me.ButtonCerrar.Text = "Cerrar"
-        Me.ButtonCerrar.UseVisualStyleBackColor = True
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(508, 12)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(108, 32)
+        Me.btnClose.TabIndex = 8
+        Me.btnClose.Text = "Cerrar"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'BindingNavigatorUsuarios
         '
         Me.BindingNavigatorUsuarios.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.BindingNavigatorUsuarios.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.BindingNavigatorUsuarios.CountItem = Me.BindingNavigatorCountItem
         Me.BindingNavigatorUsuarios.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.BindingNavigatorUsuarios.Dock = System.Windows.Forms.DockStyle.None
+        Me.BindingNavigatorUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BindingNavigatorUsuarios.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem})
-        Me.BindingNavigatorUsuarios.Location = New System.Drawing.Point(57, 311)
+        Me.BindingNavigatorUsuarios.Location = New System.Drawing.Point(0, 321)
         Me.BindingNavigatorUsuarios.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.BindingNavigatorUsuarios.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.BindingNavigatorUsuarios.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.BindingNavigatorUsuarios.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.BindingNavigatorUsuarios.Name = "BindingNavigatorUsuarios"
         Me.BindingNavigatorUsuarios.PositionItem = BindingNavigatorPositionItem
-        Me.BindingNavigatorUsuarios.Size = New System.Drawing.Size(288, 25)
+        Me.BindingNavigatorUsuarios.Size = New System.Drawing.Size(634, 25)
         Me.BindingNavigatorUsuarios.TabIndex = 9
         Me.BindingNavigatorUsuarios.Text = "BindingNavigatorUsuarios"
         '
@@ -218,26 +226,37 @@ Partial Class FormUsuarios
         'DataGridViewMascotas
         '
         Me.DataGridViewMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewMascotas.Location = New System.Drawing.Point(57, 90)
+        Me.DataGridViewMascotas.Location = New System.Drawing.Point(57, 103)
         Me.DataGridViewMascotas.Name = "DataGridViewMascotas"
-        Me.DataGridViewMascotas.Size = New System.Drawing.Size(358, 197)
+        Me.DataGridViewMascotas.Size = New System.Drawing.Size(428, 197)
         Me.DataGridViewMascotas.TabIndex = 10
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Location = New System.Drawing.Point(508, 50)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(108, 32)
+        Me.btnUpdate.TabIndex = 11
+        Me.btnUpdate.Text = "Actualizar"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(474, 349)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(634, 346)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.DataGridViewMascotas)
         Me.Controls.Add(Me.BindingNavigatorUsuarios)
-        Me.Controls.Add(Me.ButtonCerrar)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.LabelFecha)
-        Me.Controls.Add(Me.TextBoxFecha)
+        Me.Controls.Add(Me.txtFecha)
         Me.Controls.Add(Me.LabelNombre)
-        Me.Controls.Add(Me.TextBoxNombre)
+        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.LabelID)
-        Me.Controls.Add(Me.TextBoxID)
+        Me.Controls.Add(Me.txtID)
         Me.Name = "FormUsuarios"
         Me.RightToLeftLayout = True
         Me.Text = "Formulario de Propietarios"
@@ -251,13 +270,13 @@ Partial Class FormUsuarios
 
     End Sub
 
-    Friend WithEvents TextBoxID As TextBox
+    Friend WithEvents txtID As TextBox
     Friend WithEvents LabelID As Label
     Friend WithEvents LabelNombre As Label
-    Friend WithEvents TextBoxNombre As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents LabelFecha As Label
-    Friend WithEvents TextBoxFecha As TextBox
-    Friend WithEvents ButtonCerrar As Button
+    Friend WithEvents txtFecha As TextBox
+    Friend WithEvents btnClose As Button
     Friend WithEvents BindingNavigatorUsuarios As BindingNavigator
     Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
     Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
@@ -271,4 +290,5 @@ Partial Class FormUsuarios
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents BindingSourcePropietarios As BindingSource
     Friend WithEvents DataGridViewMascotas As DataGridView
+    Friend WithEvents btnUpdate As Button
 End Class

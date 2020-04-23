@@ -1,16 +1,21 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.OleDb
+Imports System.Configuration
 
 Module ControladorUsuarios
     Private row As String
     Private connectionstring As String =
         "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BASE.accdb;Persist Security Info=False"
     'Instalar https://www.microsoft.com/es-ES/download/details.aspx?id=13255
+    ' https://www.microsoft.com/en-us/download/confirmation.aspx?id=54920
     'Proyecto CPU 64x
+
+    Private usuariosDAdapter As Object
 
     Private Function Connection() As OleDbConnection 'SqlConnection
         'Return New SqlClient.SqlConnection(connectionstring) 'ADO.NET no funciona con accdb
         Return New OleDbConnection(connectionstring)
+
     End Function
 
     Sub InsertUsuario(nombre As String, fecha As Date, email As String)
@@ -109,10 +114,21 @@ Module ControladorUsuarios
         Return (id:=result.Item1, nombre:=result.Item2, fecha:=result.Item3, email:=result.Item4)
     End Function
 
-
-    Private Function DataAdapter(ByRef cmd As Object) As OleDbDataAdapter 'SqlDataAdapter
+    Private Function DataAdapter2(ByRef cmd As Object) As OleDbDataAdapter 'SqlDataAdapter
         'Return New SqlClient.SqlDataAdapter(DirectCast(cmd, SqlCommand))
         Return New OleDbDataAdapter(DirectCast(cmd, OleDbCommand))
+    End Function
+    Private Function DataAdapter() As OleDbDataAdapter 'SqlDataAdapter
+        'Return New SqlClient.SqlDataAdapter(DirectCast(cmd, SqlCommand))
+        Return New OleDbDataAdapter()
+    End Function
+
+    Private Function CommandBuilder(ByRef da As Object) As OleDbCommandBuilder 'SqlDataAdapter
+        Return New OleDbCommandBuilder(da)
+    End Function
+
+    Private Function Command(queryString As String, connection As Object) As OleDbCommand
+        Return New OleDbCommand(queryString, connection)
     End Function
 
     Sub TestConexion()
@@ -143,34 +159,39 @@ Module ControladorUsuarios
         Try
             Using conn = Connection()
                 conn.Open()
-                Using cmd = conn.CreateCommand()
-                    With cmd
-                        .CommandText = "
-                        SELECT ID, NOMBRE, FNACIMIENTO
-                        FROM USUARIOS
-                        "
-                        DataAdapter(cmd).Fill(ds, tabla)
-                    End With
-                End Using
+                Dim qrySelect = " SELECT ID, NOMBRE, FNACIMIENTO FROM USUARIOS"
+                usuariosDAdapter = DataAdapter()
+                usuariosDAdapter.SelectCommand = Command(qrySelect, conn)
+                usuariosDAdapter.fill(ds, tabla)
             End Using
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         End Try
     End Sub
 
+    Sub UpdateData(ds As DataSet, t As String)
+        'https://docs.microsoft.com/es-es/dotnet/framework/data/adonet/generating-commands-with-commandbuilders?view=netframework-4.8
+        ' No se pueden Actualizar Tablas RELACIONADAS
+        MsgBox("ESTO NO FUNCIONA CON TABLAS RELACIONADAS")
+        Return
+        Dim conn = Connection()
+        conn.Open()
+        Dim qrySelect = " SELECT ID, NOMBRE, FNACIMIENTO FROM USUARIOS"
+        usuariosDAdapter.SelectCommand = Command(qrySelect, conn)
+        Dim cmdbuilder = CommandBuilder(usuariosDAdapter)
+        cmdbuilder.GetUpdateCommand()
+        cmdbuilder.GetDeleteCommand()
+        cmdbuilder.GetInsertCommand()
+        usuariosDAdapter.Update(ds, t)
+        conn.Close()
+    End Sub
     Sub FillMascotas(ByRef ds As DataSet, tabla As String)
         Try
             Using conn = Connection()
-                conn.Open()
-                Using cmd = conn.CreateCommand()
-                    With cmd
-                        .CommandText = "
-                        SELECT ID, IDPROPIETARIO, NOMBRE
-                        FROM MASCOTAS
-                        "
-                        DataAdapter(cmd).Fill(ds, tabla)
-                    End With
-                End Using
+                Dim qrySelect = " SELECT ID, NOMBRE, IDPROPIETARIO FROM MASCOTAS"
+                Dim adapter = DataAdapter()
+                adapter.SelectCommand = Command(qrySelect, conn)
+                adapter.Fill(ds, tabla)
             End Using
         Catch ex As Exception
             Console.WriteLine(ex.Message)

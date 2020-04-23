@@ -4,10 +4,12 @@
     Dim usuario As DataRow
 
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles Me.Load
+        ' test
         ControladorUsuarios.TestConexion()
 
+        ' fill dataset
         ControladorUsuarios.FillUsuarios(ds, "USUARIOS")
-        LogUsuarios()
+        'LogUsuarios()
 
         ControladorUsuarios.FillMascotas(ds, "MASCOTAS")
 
@@ -25,9 +27,9 @@
         BindingNavigatorUsuarios.BindingSource = BindingSourcePropietarios
 
         'Controles Textos
-        TextBoxID.DataBindings.Add("Text", BindingSourcePropietarios, "ID", True)
-        TextBoxNombre.DataBindings.Add("Text", BindingSourcePropietarios, "NOMBRE", True)
-        TextBoxFecha.DataBindings.Add("Text", BindingSourcePropietarios, "FNACIMIENTO", True)
+        txtID.DataBindings.Add("Text", BindingSourcePropietarios, "ID", True)
+        txtNombre.DataBindings.Add("Text", BindingSourcePropietarios, "NOMBRE", True)
+        txtFecha.DataBindings.Add("Text", BindingSourcePropietarios, "FNACIMIENTO", True)
 
         'Control DataGridViewMascotas
         'https://stackoverflow.com/questions/6063902/datagridview-parent-to-child-database-relation-updating-child-datagridview-d
@@ -47,8 +49,13 @@
         Next i
     End Sub
 
-    Private Sub ButtonCerrar_Click(sender As Object, e As EventArgs) Handles ButtonCerrar.Click
+    Private Sub ButtonCerrar_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        ds.Relations.Remove("PROPIETARIOS")
+        UpdateData(ds, "USUARIOS")
     End Sub
 
 
