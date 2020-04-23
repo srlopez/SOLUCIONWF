@@ -41,6 +41,7 @@ Partial Class FormBase
         Me.btnAbrirMain = New System.Windows.Forms.Button()
         Me.flPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.lblBotones = New System.Windows.Forms.Label()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -222,7 +223,7 @@ Partial Class FormBase
         '
         Me.flPanel.AutoScroll = True
         Me.flPanel.AutoSize = True
-        Me.flPanel.Location = New System.Drawing.Point(124, 357)
+        Me.flPanel.Location = New System.Drawing.Point(124, 367)
         Me.flPanel.Name = "flPanel"
         Me.flPanel.Size = New System.Drawing.Size(475, 158)
         Me.flPanel.TabIndex = 20
@@ -237,11 +238,23 @@ Partial Class FormBase
         Me.picLogo.TabIndex = 21
         Me.picLogo.TabStop = False
         '
+        'lblBotones
+        '
+        Me.lblBotones.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.lblBotones.AutoSize = True
+        Me.lblBotones.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblBotones.Location = New System.Drawing.Point(120, 344)
+        Me.lblBotones.Name = "lblBotones"
+        Me.lblBotones.Size = New System.Drawing.Size(144, 20)
+        Me.lblBotones.TabIndex = 22
+        Me.lblBotones.Text = "Botones dinámicos"
+        '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(731, 644)
+        Me.Controls.Add(Me.lblBotones)
         Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.flPanel)
         Me.Controls.Add(Me.btnAbrirMain)
@@ -287,4 +300,5 @@ Partial Class FormBase
     Friend WithEvents btnAbrirMain As Button
     Friend WithEvents flPanel As FlowLayoutPanel
     Friend WithEvents picLogo As PictureBox
+    Friend WithEvents lblBotones As Label
 End Class
