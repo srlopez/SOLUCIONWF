@@ -40,6 +40,8 @@ Partial Class FormBase
         Me.cmbSelect = New System.Windows.Forms.ComboBox()
         Me.btnAbrirMain = New System.Windows.Forms.Button()
         Me.flPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtNombre
@@ -219,11 +221,22 @@ Partial Class FormBase
         Me.flPanel.Size = New System.Drawing.Size(475, 158)
         Me.flPanel.TabIndex = 20
         '
+        'picLogo
+        '
+        Me.picLogo.Image = Global.Access.WinForm.My.Resources.Resources.pnglogo2
+        Me.picLogo.Location = New System.Drawing.Point(124, 13)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(214, 59)
+        Me.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLogo.TabIndex = 21
+        Me.picLogo.TabStop = False
+        '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(731, 644)
+        Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.flPanel)
         Me.Controls.Add(Me.btnAbrirMain)
         Me.Controls.Add(Me.cmbSelect)
@@ -243,6 +256,7 @@ Partial Class FormBase
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.txtNombre)
         Me.Name = "FormBase"
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -266,4 +280,5 @@ Partial Class FormBase
     Friend WithEvents cmbSelect As ComboBox
     Friend WithEvents btnAbrirMain As Button
     Friend WithEvents flPanel As FlowLayoutPanel
+    Friend WithEvents picLogo As PictureBox
 End Class
