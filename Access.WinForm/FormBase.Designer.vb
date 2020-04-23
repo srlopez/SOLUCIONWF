@@ -36,12 +36,15 @@ Partial Class FormBase
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.lblBuscar = New System.Windows.Forms.Label()
+        Me.btnNuevo = New System.Windows.Forms.Button()
+        Me.cmbSelect = New System.Windows.Forms.ComboBox()
+        Me.btnAbrirMain = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(119, 79)
+        Me.txtNombre.Location = New System.Drawing.Point(123, 206)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(244, 26)
         Me.txtNombre.TabIndex = 1
@@ -50,7 +53,7 @@ Partial Class FormBase
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(48, 82)
+        Me.lblNombre.Location = New System.Drawing.Point(52, 209)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(65, 20)
         Me.lblNombre.TabIndex = 2
@@ -61,7 +64,7 @@ Partial Class FormBase
         '
         Me.lblEmail.AutoSize = True
         Me.lblEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmail.Location = New System.Drawing.Point(65, 133)
+        Me.lblEmail.Location = New System.Drawing.Point(69, 260)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(48, 20)
         Me.lblEmail.TabIndex = 5
@@ -71,7 +74,7 @@ Partial Class FormBase
         'txtEmail
         '
         Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(119, 127)
+        Me.txtEmail.Location = New System.Drawing.Point(123, 254)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(244, 26)
         Me.txtEmail.TabIndex = 3
@@ -80,7 +83,7 @@ Partial Class FormBase
         '
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFecha.Location = New System.Drawing.Point(59, 106)
+        Me.lblFecha.Location = New System.Drawing.Point(63, 233)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(54, 20)
         Me.lblFecha.TabIndex = 8
@@ -90,7 +93,7 @@ Partial Class FormBase
         'txtFecha
         '
         Me.txtFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFecha.Location = New System.Drawing.Point(119, 103)
+        Me.txtFecha.Location = New System.Drawing.Point(123, 230)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.Size = New System.Drawing.Size(244, 26)
         Me.txtFecha.TabIndex = 2
@@ -99,7 +102,7 @@ Partial Class FormBase
         '
         Me.lblID.AutoSize = True
         Me.lblID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblID.Location = New System.Drawing.Point(87, 58)
+        Me.lblID.Location = New System.Drawing.Point(91, 185)
         Me.lblID.Name = "lblID"
         Me.lblID.Size = New System.Drawing.Size(26, 20)
         Me.lblID.TabIndex = 10
@@ -109,7 +112,7 @@ Partial Class FormBase
         'txtID
         '
         Me.txtID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.Location = New System.Drawing.Point(119, 55)
+        Me.txtID.Location = New System.Drawing.Point(123, 182)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(244, 26)
@@ -118,7 +121,7 @@ Partial Class FormBase
         'btnGuardar
         '
         Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(284, 159)
+        Me.btnGuardar.Location = New System.Drawing.Point(288, 286)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(79, 35)
         Me.btnGuardar.TabIndex = 4
@@ -128,7 +131,7 @@ Partial Class FormBase
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(421, 51)
+        Me.txtBuscar.Location = New System.Drawing.Point(124, 98)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(142, 26)
         Me.txtBuscar.TabIndex = 11
@@ -138,17 +141,17 @@ Partial Class FormBase
         Me.lstUsuarios.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstUsuarios.FormattingEnabled = True
         Me.lstUsuarios.ItemHeight = 20
-        Me.lstUsuarios.Location = New System.Drawing.Point(421, 84)
+        Me.lstUsuarios.Location = New System.Drawing.Point(415, 97)
         Me.lstUsuarios.MultiColumn = True
         Me.lstUsuarios.Name = "lstUsuarios"
         Me.lstUsuarios.ScrollAlwaysVisible = True
-        Me.lstUsuarios.Size = New System.Drawing.Size(184, 204)
+        Me.lstUsuarios.Size = New System.Drawing.Size(184, 224)
         Me.lstUsuarios.TabIndex = 12
         '
         'btnBuscar
         '
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.Location = New System.Drawing.Point(570, 51)
+        Me.btnBuscar.Location = New System.Drawing.Point(273, 98)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(35, 30)
         Me.btnBuscar.TabIndex = 13
@@ -157,8 +160,9 @@ Partial Class FormBase
         '
         'btnDelete
         '
+        Me.btnDelete.Enabled = False
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(119, 159)
+        Me.btnDelete.Location = New System.Drawing.Point(123, 286)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 35)
         Me.btnDelete.TabIndex = 15
@@ -169,17 +173,50 @@ Partial Class FormBase
         '
         Me.lblBuscar.AutoSize = True
         Me.lblBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBuscar.Location = New System.Drawing.Point(417, 28)
+        Me.lblBuscar.Location = New System.Drawing.Point(120, 75)
         Me.lblBuscar.Name = "lblBuscar"
         Me.lblBuscar.Size = New System.Drawing.Size(59, 20)
         Me.lblBuscar.TabIndex = 16
         Me.lblBuscar.Text = "Buscar"
         '
+        'btnNuevo
+        '
+        Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.Location = New System.Drawing.Point(204, 286)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(79, 35)
+        Me.btnNuevo.TabIndex = 17
+        Me.btnNuevo.Text = "Nuevo"
+        Me.btnNuevo.UseVisualStyleBackColor = True
+        '
+        'cmbSelect
+        '
+        Me.cmbSelect.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbSelect.FormattingEnabled = True
+        Me.cmbSelect.Location = New System.Drawing.Point(124, 130)
+        Me.cmbSelect.Name = "cmbSelect"
+        Me.cmbSelect.Size = New System.Drawing.Size(243, 28)
+        Me.cmbSelect.TabIndex = 18
+        '
+        'btnAbrirMain
+        '
+        Me.btnAbrirMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAbrirMain.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnAbrirMain.Location = New System.Drawing.Point(217, 371)
+        Me.btnAbrirMain.Name = "btnAbrirMain"
+        Me.btnAbrirMain.Size = New System.Drawing.Size(207, 65)
+        Me.btnAbrirMain.TabIndex = 19
+        Me.btnAbrirMain.Text = "Main"
+        Me.btnAbrirMain.UseVisualStyleBackColor = True
+        '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(675, 327)
+        Me.ClientSize = New System.Drawing.Size(675, 501)
+        Me.Controls.Add(Me.btnAbrirMain)
+        Me.Controls.Add(Me.cmbSelect)
+        Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.lblBuscar)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnBuscar)
@@ -214,4 +251,7 @@ Partial Class FormBase
     Friend WithEvents btnBuscar As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents lblBuscar As Label
+    Friend WithEvents btnNuevo As Button
+    Friend WithEvents cmbSelect As ComboBox
+    Friend WithEvents btnAbrirMain As Button
 End Class

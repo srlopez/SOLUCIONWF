@@ -42,7 +42,7 @@ Module ControladorUsuarios
                              NOMBRE=@Nombre, 
                              FNACIMIENTO=@Fecha, 
                              EMAIL=@Email
-                           WHERE ID LIKE @ID"
+                           WHERE ID = @ID"
         cmd.Parameters.AddWithValue("@Nombre", nombre)
         cmd.Parameters.AddWithValue("@FNacimiento", fecha)
         cmd.Parameters.AddWithValue("@Email", email.ToLower)
@@ -60,6 +60,7 @@ Module ControladorUsuarios
         cmd.ExecuteNonQuery()
         conn.Close()
     End Sub
+
     Function SelectUsuariosLIKE(filtro As String) As ArrayList
         Dim conn = Connection()
         conn.Open()
@@ -76,7 +77,6 @@ Module ControladorUsuarios
                 Do While .Read()
                     row = String.Format("{1}, {0} ", reader("ID"), reader("NOMBRE"))
                     miAlist.Add((ID:=reader("ID"), nombre:=reader("NOMBRE")))
-                    'lst.Items.Add(row)
                     Console.WriteLine(row)
                 Loop
             End With

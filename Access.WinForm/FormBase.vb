@@ -10,7 +10,9 @@ Public Class FormBase
         txtFecha.Text = ""
         txtEmail.Text = ""
         lstUsuarios.Items.Clear()
+        btnDelete.Enabled = False
     End Sub
+
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Try
             Dim expenddt As Date = Date.ParseExact(txtFecha.Text, "dd/MM/yyyy",
@@ -22,7 +24,6 @@ Public Class FormBase
                             expenddt,
                             txtEmail.Text)
             Else
-
                 InsertUsuario(txtNombre.Text,
                             expenddt,
                             txtEmail.Text)
@@ -43,10 +44,12 @@ Public Class FormBase
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         lstUsuarios.Items.Clear()
+        cmbSelect.Items.Clear()
         usuarios.Clear()
         usuarios = SelectUsuariosLIKE(txtBuscar.Text)
         For Each item In usuarios
             lstUsuarios.Items.Add(item.Item2)
+            cmbSelect.Items.Add(item.Item2)
         Next
     End Sub
 
@@ -62,10 +65,31 @@ Public Class FormBase
         txtNombre.Text = usuario.nombre
         txtFecha.Text = usuario.fecha '.ToString("d", DateTimeFormatInfo.InvariantInfo)
         txtEmail.Text = usuario.email
+
+        btnDelete.Enabled = True
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         DeleteUsuariosByID(txtID.Text)
         ClearForm()
+    End Sub
+
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        ClearForm()
+    End Sub
+
+    Private Sub cmbSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSelect.SelectedIndexChanged
+        Dim id = usuarios(cmbSelect.SelectedIndex).Item1 'ID
+        Dim usuario = SelectUsuariosByID(id)
+        txtID.Text = usuario.id
+        txtNombre.Text = usuario.nombre
+        txtFecha.Text = usuario.fecha '.ToString("d", DateTimeFormatInfo.InvariantInfo)
+        txtEmail.Text = usuario.email
+
+        btnDelete.Enabled = True
+    End Sub
+
+    Private Sub btnAbrirMain_Click(sender As Object, e As EventArgs) Handles btnAbrirMain.Click
+        FormUsuarios.Show()
     End Sub
 End Class
