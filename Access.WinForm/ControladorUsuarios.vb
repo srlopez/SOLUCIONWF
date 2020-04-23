@@ -8,6 +8,7 @@ Module ControladorUsuarios
         "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BASE.accdb;Persist Security Info=False"
     'Instalar https://www.microsoft.com/es-ES/download/details.aspx?id=13255
     ' https://www.microsoft.com/en-us/download/confirmation.aspx?id=54920
+    ' https://www.youtube.com/watch?v=do0eh9Vu7nQ
     'Proyecto CPU 64x
 
     Private usuariosDAdapter As Object
