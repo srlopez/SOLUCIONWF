@@ -123,20 +123,22 @@ Partial Class FormBase
         '
         'btnGuardar
         '
+        Me.btnGuardar.BackColor = System.Drawing.Color.ForestGreen
         Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Location = New System.Drawing.Point(288, 286)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(79, 35)
         Me.btnGuardar.TabIndex = 4
         Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
+        Me.btnGuardar.UseVisualStyleBackColor = False
         '
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(124, 98)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(142, 26)
+        Me.txtBuscar.Size = New System.Drawing.Size(202, 26)
         Me.txtBuscar.TabIndex = 11
         '
         'lstUsuarios
@@ -154,23 +156,25 @@ Partial Class FormBase
         'btnBuscar
         '
         Me.btnBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.Location = New System.Drawing.Point(273, 98)
+        Me.btnBuscar.Location = New System.Drawing.Point(332, 97)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(35, 30)
+        Me.btnBuscar.Size = New System.Drawing.Size(35, 31)
         Me.btnBuscar.TabIndex = 13
         Me.btnBuscar.Text = ">>"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'btnDelete
         '
+        Me.btnDelete.BackColor = System.Drawing.Color.Maroon
         Me.btnDelete.Enabled = False
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(123, 286)
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(207, 286)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 35)
         Me.btnDelete.TabIndex = 15
         Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
+        Me.btnDelete.UseVisualStyleBackColor = False
         '
         'lblBuscar
         '
@@ -184,13 +188,15 @@ Partial Class FormBase
         '
         'btnNuevo
         '
+        Me.btnNuevo.BackColor = System.Drawing.Color.RoyalBlue
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.Location = New System.Drawing.Point(204, 286)
+        Me.btnNuevo.ForeColor = System.Drawing.Color.White
+        Me.btnNuevo.Location = New System.Drawing.Point(122, 286)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(79, 35)
         Me.btnNuevo.TabIndex = 17
         Me.btnNuevo.Text = "Nuevo"
-        Me.btnNuevo.UseVisualStyleBackColor = True
+        Me.btnNuevo.UseVisualStyleBackColor = False
         '
         'cmbSelect
         '
@@ -209,7 +215,7 @@ Partial Class FormBase
         Me.btnAbrirMain.Name = "btnAbrirMain"
         Me.btnAbrirMain.Size = New System.Drawing.Size(184, 29)
         Me.btnAbrirMain.TabIndex = 19
-        Me.btnAbrirMain.Text = "Main"
+        Me.btnAbrirMain.Text = "Main >>"
         Me.btnAbrirMain.UseVisualStyleBackColor = True
         '
         'flPanel
