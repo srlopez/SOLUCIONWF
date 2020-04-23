@@ -21,3 +21,4 @@ C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.v
 C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.exe
 C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.xml
 C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.pdb
+C:\Users\santi\source\repos\SOLUCIONWF\Access.WinForm\obj\Debug\Access.WinForm.FormBase.resources
