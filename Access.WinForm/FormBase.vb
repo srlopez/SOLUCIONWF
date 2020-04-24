@@ -94,7 +94,7 @@ Public Class FormBase
     End Sub
 
     Private Sub btnAbrirMain_Click(sender As Object, e As EventArgs) Handles btnAbrirMain.Click
-        FormUsuarios.Show()
+        FormMascotas.Show()
     End Sub
 
     Private Sub theButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

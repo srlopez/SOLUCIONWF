@@ -45,7 +45,6 @@ Partial Class FormUsuarios
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingSourcePropietarios = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewMascotas = New System.Windows.Forms.DataGridView()
-        Me.btnUpdate = New System.Windows.Forms.Button()
         BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
         CType(Me.BindingNavigatorUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigatorUsuarios.SuspendLayout()
@@ -231,23 +230,12 @@ Partial Class FormUsuarios
         Me.DataGridViewMascotas.Size = New System.Drawing.Size(428, 197)
         Me.DataGridViewMascotas.TabIndex = 10
         '
-        'btnUpdate
-        '
-        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(508, 50)
-        Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(108, 32)
-        Me.btnUpdate.TabIndex = 11
-        Me.btnUpdate.Text = "Actualizar"
-        Me.btnUpdate.UseVisualStyleBackColor = True
-        '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(634, 346)
-        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.DataGridViewMascotas)
         Me.Controls.Add(Me.BindingNavigatorUsuarios)
         Me.Controls.Add(Me.btnClose)
@@ -290,5 +278,4 @@ Partial Class FormUsuarios
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents BindingSourcePropietarios As BindingSource
     Friend WithEvents DataGridViewMascotas As DataGridView
-    Friend WithEvents btnUpdate As Button
 End Class

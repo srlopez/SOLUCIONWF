@@ -6,6 +6,7 @@ Module ControladorUsuarios
     Private row As String
     Private connectionstring As String =
         "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BASE.accdb;Persist Security Info=False"
+    '       "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BASE.accdb;Persist Security Info=False"
     'Instalar https://www.microsoft.com/es-ES/download/details.aspx?id=13255
     ' https://www.microsoft.com/en-us/download/confirmation.aspx?id=54920
     ' https://www.youtube.com/watch?v=do0eh9Vu7nQ
@@ -166,27 +167,10 @@ Module ControladorUsuarios
         End Try
     End Sub
 
-    Sub UpdateData(ds As DataSet, t As String)
-        'https://docs.microsoft.com/es-es/dotnet/framework/data/adonet/generating-commands-with-commandbuilders?view=netframework-4.8
-        ' No se pueden Actualizar Tablas RELACIONADAS
-        MsgBox("ESTO NO FUNCIONA CON TABLAS RELACIONADAS")
-        Return
-        Dim conn = Connection()
-        conn.Open()
-        Dim qrySelect = " SELECT ID, NOMBRE, FNACIMIENTO FROM USUARIOS"
-        usuariosDAdapter.SelectCommand = Command(qrySelect, conn)
-        Dim cmdbuilder = CommandBuilder(usuariosDAdapter)
-        cmdbuilder.GetUpdateCommand()
-        cmdbuilder.GetDeleteCommand()
-        cmdbuilder.GetInsertCommand()
-        usuariosDAdapter.Update(ds, t)
-        conn.Close()
-    End Sub
-
     Sub FillMascotas(ByRef ds As DataSet, tabla As String)
         Try
             Using conn = Connection()
-                Dim qrySelect = " SELECT ID, NOMBRE, IDPROPIETARIO FROM MASCOTAS"
+                Dim qrySelect = " SELECT * FROM MASCOTAS"
                 Dim adapter = DataAdapter()
                 adapter.SelectCommand = Command(qrySelect, conn)
                 adapter.Fill(ds, tabla)
@@ -194,6 +178,24 @@ Module ControladorUsuarios
         Catch ex As Exception
             Console.WriteLine(ex.Message)
         End Try
+    End Sub
+
+    Sub UpdateData(ds As DataSet, t As String)
+        'https://docs.microsoft.com/es-es/dotnet/framework/data/adonet/generating-commands-with-commandbuilders?view=netframework-4.8
+        ' No se pueden Actualizar Tablas RELACIONADAS
+        'MsgBox("ESTO NO FUNCIONA CON TABLAS RELACIONADAS")
+        'Return
+        Dim conn = Connection()
+        conn.Open()
+        Dim qrySelect = " SELECT * FROM MASCOTAS"
+        Dim adapter = DataAdapter()
+        adapter.SelectCommand = Command(qrySelect, conn)
+        Dim cmdbuilder = CommandBuilder(adapter)
+        cmdbuilder.GetUpdateCommand()
+        cmdbuilder.GetDeleteCommand()
+        cmdbuilder.GetInsertCommand()
+        adapter.Update(ds, t)
+        conn.Close()
     End Sub
 
 End Module

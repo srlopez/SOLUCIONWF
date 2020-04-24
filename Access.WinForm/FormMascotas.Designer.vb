@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormMascotas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormMascotas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormMascotas))
@@ -35,6 +35,7 @@ Partial Class FormMascotas
         Me.lblRaza = New System.Windows.Forms.Label()
         Me.cmbRaza = New System.Windows.Forms.ComboBox()
         Me.reglaDeMenu = New System.Windows.Forms.MenuStrip()
+        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.navFormulario = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
@@ -47,8 +48,8 @@ Partial Class FormMascotas
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btmAplicar = New System.Windows.Forms.Button()
         Me.reglaDeMenu.SuspendLayout()
         CType(Me.navFormulario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.navFormulario.SuspendLayout()
@@ -58,7 +59,7 @@ Partial Class FormMascotas
         'txtID
         '
         Me.txtID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtID.Location = New System.Drawing.Point(326, 80)
+        Me.txtID.Location = New System.Drawing.Point(103, 58)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(182, 26)
         Me.txtID.TabIndex = 0
@@ -67,7 +68,7 @@ Partial Class FormMascotas
         '
         Me.lblID.AutoSize = True
         Me.lblID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblID.Location = New System.Drawing.Point(294, 80)
+        Me.lblID.Location = New System.Drawing.Point(71, 58)
         Me.lblID.Name = "lblID"
         Me.lblID.Size = New System.Drawing.Size(26, 20)
         Me.lblID.TabIndex = 1
@@ -77,7 +78,7 @@ Partial Class FormMascotas
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(255, 112)
+        Me.lblNombre.Location = New System.Drawing.Point(32, 90)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(65, 20)
         Me.lblNombre.TabIndex = 7
@@ -86,7 +87,7 @@ Partial Class FormMascotas
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(326, 112)
+        Me.txtNombre.Location = New System.Drawing.Point(103, 90)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(182, 26)
         Me.txtNombre.TabIndex = 6
@@ -95,7 +96,7 @@ Partial Class FormMascotas
         '
         Me.cmbEspecie.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEspecie.FormattingEnabled = True
-        Me.cmbEspecie.Location = New System.Drawing.Point(326, 145)
+        Me.cmbEspecie.Location = New System.Drawing.Point(103, 123)
         Me.cmbEspecie.Name = "cmbEspecie"
         Me.cmbEspecie.Size = New System.Drawing.Size(182, 28)
         Me.cmbEspecie.TabIndex = 8
@@ -104,7 +105,7 @@ Partial Class FormMascotas
         '
         Me.lblEspecie.AutoSize = True
         Me.lblEspecie.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEspecie.Location = New System.Drawing.Point(255, 145)
+        Me.lblEspecie.Location = New System.Drawing.Point(32, 123)
         Me.lblEspecie.Name = "lblEspecie"
         Me.lblEspecie.Size = New System.Drawing.Size(66, 20)
         Me.lblEspecie.TabIndex = 9
@@ -114,7 +115,7 @@ Partial Class FormMascotas
         '
         Me.lblPropietario.AutoSize = True
         Me.lblPropietario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPropietario.Location = New System.Drawing.Point(236, 212)
+        Me.lblPropietario.Location = New System.Drawing.Point(13, 190)
         Me.lblPropietario.Name = "lblPropietario"
         Me.lblPropietario.Size = New System.Drawing.Size(85, 20)
         Me.lblPropietario.TabIndex = 11
@@ -124,7 +125,7 @@ Partial Class FormMascotas
         '
         Me.cmbPropietario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPropietario.FormattingEnabled = True
-        Me.cmbPropietario.Location = New System.Drawing.Point(326, 212)
+        Me.cmbPropietario.Location = New System.Drawing.Point(103, 190)
         Me.cmbPropietario.Name = "cmbPropietario"
         Me.cmbPropietario.Size = New System.Drawing.Size(182, 28)
         Me.cmbPropietario.TabIndex = 10
@@ -133,7 +134,7 @@ Partial Class FormMascotas
         '
         Me.lblRaza.AutoSize = True
         Me.lblRaza.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRaza.Location = New System.Drawing.Point(273, 177)
+        Me.lblRaza.Location = New System.Drawing.Point(50, 155)
         Me.lblRaza.Name = "lblRaza"
         Me.lblRaza.Size = New System.Drawing.Size(47, 20)
         Me.lblRaza.TabIndex = 13
@@ -143,7 +144,7 @@ Partial Class FormMascotas
         '
         Me.cmbRaza.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbRaza.FormattingEnabled = True
-        Me.cmbRaza.Location = New System.Drawing.Point(326, 177)
+        Me.cmbRaza.Location = New System.Drawing.Point(103, 155)
         Me.cmbRaza.Name = "cmbRaza"
         Me.cmbRaza.Size = New System.Drawing.Size(182, 28)
         Me.cmbRaza.TabIndex = 12
@@ -153,9 +154,15 @@ Partial Class FormMascotas
         Me.reglaDeMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.reglaDeMenu.Location = New System.Drawing.Point(0, 0)
         Me.reglaDeMenu.Name = "reglaDeMenu"
-        Me.reglaDeMenu.Size = New System.Drawing.Size(760, 24)
+        Me.reglaDeMenu.Size = New System.Drawing.Size(354, 24)
         Me.reglaDeMenu.TabIndex = 14
         Me.reglaDeMenu.Text = "Menu"
+        '
+        'MenuToolStripMenuItem
+        '
+        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
+        Me.MenuToolStripMenuItem.Text = "Menu"
         '
         'navFormulario
         '
@@ -164,14 +171,14 @@ Partial Class FormMascotas
         Me.navFormulario.DeleteItem = Me.BindingNavigatorDeleteItem
         Me.navFormulario.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.navFormulario.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem})
-        Me.navFormulario.Location = New System.Drawing.Point(0, 441)
+        Me.navFormulario.Location = New System.Drawing.Point(0, 316)
         Me.navFormulario.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.navFormulario.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.navFormulario.MoveNextItem = Me.BindingNavigatorMoveNextItem
         Me.navFormulario.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.navFormulario.Name = "navFormulario"
         Me.navFormulario.PositionItem = Me.BindingNavigatorPositionItem
-        Me.navFormulario.Size = New System.Drawing.Size(760, 25)
+        Me.navFormulario.Size = New System.Drawing.Size(354, 25)
         Me.navFormulario.TabIndex = 15
         Me.navFormulario.Text = "navFormulario"
         '
@@ -261,17 +268,25 @@ Partial Class FormMascotas
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
-        'MenuToolStripMenuItem
+        'BindingSource1
         '
-        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.MenuToolStripMenuItem.Text = "Menu"
+        '
+        'btmAplicar
+        '
+        Me.btmAplicar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btmAplicar.Location = New System.Drawing.Point(196, 242)
+        Me.btmAplicar.Name = "btmAplicar"
+        Me.btmAplicar.Size = New System.Drawing.Size(88, 31)
+        Me.btmAplicar.TabIndex = 16
+        Me.btmAplicar.Text = "Aplicar"
+        Me.btmAplicar.UseVisualStyleBackColor = True
         '
         'FormMascotas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(760, 466)
+        Me.ClientSize = New System.Drawing.Size(354, 341)
+        Me.Controls.Add(Me.btmAplicar)
         Me.Controls.Add(Me.navFormulario)
         Me.Controls.Add(Me.lblRaza)
         Me.Controls.Add(Me.cmbRaza)
@@ -324,4 +339,5 @@ Partial Class FormMascotas
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents btmAplicar As Button
 End Class

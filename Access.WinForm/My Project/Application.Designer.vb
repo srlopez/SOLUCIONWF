@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Access.WinForm.MDIParent
+            Me.MainForm = Global.Access.WinForm.FormMascotas
         End Sub
     End Class
 End Namespace

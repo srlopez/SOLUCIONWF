@@ -53,6 +53,27 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Label1")>  _
+        Public Property oo() As String
+            Get
+                Return CType(Me("oo"),String)
+            End Get
+            Set
+                Me("oo") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Label1")>  _
+        Public ReadOnly Property aa() As String
+            Get
+                Return CType(Me("aa"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

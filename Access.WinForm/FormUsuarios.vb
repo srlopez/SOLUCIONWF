@@ -53,10 +53,5 @@
         Me.Close()
     End Sub
 
-    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
-        ds.Relations.Remove("PROPIETARIOS")
-        UpdateData(ds, "USUARIOS")
-    End Sub
-
 
 End Class
