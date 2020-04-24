@@ -35,7 +35,6 @@
         'https://stackoverflow.com/questions/6063902/datagridview-parent-to-child-database-relation-updating-child-datagridview-d
         DataGridViewMascotas.DataSource = BindingSourcePropietarios
         DataGridViewMascotas.DataMember = "PROPIETARIOS"
-
     End Sub
 
     Sub LogUsuarios()
@@ -54,4 +53,37 @@
     End Sub
 
 
+
+
+
+    Private Sub DataGridViewMascotas_UserAddedRow(sender As Object, e As DataGridViewRowEventArgs) Handles DataGridViewMascotas.UserAddedRow
+        'DataGridViewRow
+        Dim row = DataGridViewMascotas.CurrentRow()
+        Console.WriteLine(row.IsNewRow)
+        'If IsDBNull(row("ID")) Then
+        '    row("ID") = Guid.NewGuid()
+        '    txtID.Text = row("ID")
+        'End If
+    End Sub
+
+    Private Sub DataGridViewMascotas_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles DataGridViewMascotas.RowsAdded
+        Try
+            Dim row = DataGridViewMascotas.CurrentRow()
+            If Not row Is Nothing Then
+                'Console.WriteLine(row.IsNewRow)
+                If IsDBNull(row.Cells("ID").Value) Then
+                    row.Cells("ID").Value = Guid.NewGuid()
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub btnAplicar_Click(sender As Object, e As EventArgs) Handles btnAplicar.Click
+        Me.Validate()
+        BindingSourcePropietarios.EndEdit()
+        UpdateData(ds, "MASCOTAS")
+    End Sub
 End Class

@@ -33,9 +33,7 @@ Partial Class FormUsuarios
         Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.BindingNavigatorUsuarios = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
@@ -45,6 +43,7 @@ Partial Class FormUsuarios
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingSourcePropietarios = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewMascotas = New System.Windows.Forms.DataGridView()
+        Me.btnAplicar = New System.Windows.Forms.Button()
         BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
         CType(Me.BindingNavigatorUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BindingNavigatorUsuarios.SuspendLayout()
@@ -130,12 +129,12 @@ Partial Class FormUsuarios
         '
         'BindingNavigatorUsuarios
         '
-        Me.BindingNavigatorUsuarios.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.BindingNavigatorUsuarios.AddNewItem = Nothing
         Me.BindingNavigatorUsuarios.CountItem = Me.BindingNavigatorCountItem
-        Me.BindingNavigatorUsuarios.DeleteItem = Me.BindingNavigatorDeleteItem
+        Me.BindingNavigatorUsuarios.DeleteItem = Nothing
         Me.BindingNavigatorUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BindingNavigatorUsuarios.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem})
-        Me.BindingNavigatorUsuarios.Location = New System.Drawing.Point(0, 321)
+        Me.BindingNavigatorUsuarios.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2})
+        Me.BindingNavigatorUsuarios.Location = New System.Drawing.Point(0, 370)
         Me.BindingNavigatorUsuarios.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.BindingNavigatorUsuarios.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.BindingNavigatorUsuarios.MoveNextItem = Me.BindingNavigatorMoveNextItem
@@ -146,30 +145,12 @@ Partial Class FormUsuarios
         Me.BindingNavigatorUsuarios.TabIndex = 9
         Me.BindingNavigatorUsuarios.Text = "BindingNavigatorUsuarios"
         '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorAddNewItem.Text = "Agregar nuevo"
-        '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
         Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(37, 22)
         Me.BindingNavigatorCountItem.Text = "de {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Número total de elementos"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Eliminar"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -230,12 +211,23 @@ Partial Class FormUsuarios
         Me.DataGridViewMascotas.Size = New System.Drawing.Size(428, 197)
         Me.DataGridViewMascotas.TabIndex = 10
         '
+        'btnAplicar
+        '
+        Me.btnAplicar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAplicar.Location = New System.Drawing.Point(377, 306)
+        Me.btnAplicar.Name = "btnAplicar"
+        Me.btnAplicar.Size = New System.Drawing.Size(108, 32)
+        Me.btnAplicar.TabIndex = 11
+        Me.btnAplicar.Text = "Aplicar"
+        Me.btnAplicar.UseVisualStyleBackColor = True
+        '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(634, 346)
+        Me.ClientSize = New System.Drawing.Size(634, 395)
+        Me.Controls.Add(Me.btnAplicar)
         Me.Controls.Add(Me.DataGridViewMascotas)
         Me.Controls.Add(Me.BindingNavigatorUsuarios)
         Me.Controls.Add(Me.btnClose)
@@ -266,9 +258,7 @@ Partial Class FormUsuarios
     Friend WithEvents txtFecha As TextBox
     Friend WithEvents btnClose As Button
     Friend WithEvents BindingNavigatorUsuarios As BindingNavigator
-    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
     Friend WithEvents BindingNavigatorCountItem As ToolStripLabel
-    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
     Friend WithEvents BindingNavigatorMoveFirstItem As ToolStripButton
     Friend WithEvents BindingNavigatorMovePreviousItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator As ToolStripSeparator
@@ -278,4 +268,5 @@ Partial Class FormUsuarios
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents BindingSourcePropietarios As BindingSource
     Friend WithEvents DataGridViewMascotas As DataGridView
+    Friend WithEvents btnAplicar As Button
 End Class
