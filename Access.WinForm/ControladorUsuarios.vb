@@ -115,10 +115,6 @@ Module ControladorUsuarios
         Return (id:=result.Item1, nombre:=result.Item2, fecha:=result.Item3, email:=result.Item4)
     End Function
 
-    Private Function DataAdapter2(ByRef cmd As Object) As OleDbDataAdapter 'SqlDataAdapter
-        'Return New SqlClient.SqlDataAdapter(DirectCast(cmd, SqlCommand))
-        Return New OleDbDataAdapter(DirectCast(cmd, OleDbCommand))
-    End Function
     Private Function DataAdapter() As OleDbDataAdapter 'SqlDataAdapter
         'Return New SqlClient.SqlDataAdapter(DirectCast(cmd, SqlCommand))
         Return New OleDbDataAdapter()
@@ -186,6 +182,7 @@ Module ControladorUsuarios
         usuariosDAdapter.Update(ds, t)
         conn.Close()
     End Sub
+
     Sub FillMascotas(ByRef ds As DataSet, tabla As String)
         Try
             Using conn = Connection()

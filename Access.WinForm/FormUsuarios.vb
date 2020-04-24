@@ -1,7 +1,7 @@
 ﻿Public Class FormUsuarios
 
     Dim ds As DataSet = New DataSet()
-    Dim usuario As DataRow
+    'Dim usuario As DataRow
 
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles Me.Load
         ' test
@@ -17,7 +17,7 @@
             ds.Tables("USUARIOS").Columns("ID"),
             ds.Tables("MASCOTAS").Columns("IDPROPIETARIO"))
 
-        'Control BindingSourceUsuarios
+        'Control BindingSource
         BindingSourcePropietarios = New BindingSource()
         BindingSourcePropietarios.DataSource = ds
 

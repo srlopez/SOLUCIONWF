@@ -53,7 +53,7 @@ Public Class FormBase
         For Each item In usuarios
             lstUsuarios.Items.Add(item.Item2)
             cmbSelect.Items.Add(item.Item2)
-            flPanel.Controls.Add(AddControl(item.Item2, item.Item1))
+            flPanel.Controls.Add(CreateButton(item.Item2, item.Item1))
         Next
     End Sub
 
@@ -97,7 +97,6 @@ Public Class FormBase
         FormUsuarios.Show()
     End Sub
 
-
     Private Sub theButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ' Handle your Button clicks here
         MsgBox("HOLA SOY EL BOTON" + vbCrLf +
@@ -107,7 +106,7 @@ Public Class FormBase
         Console.WriteLine(e)
     End Sub
 
-    Function AddControl(nombre As String, id As String) As Button
+    Function CreateButton(nombre As String, id As String) As Button
         Dim myCrtl As New Button
         With myCrtl
             .Size = New Size(100, 100)
