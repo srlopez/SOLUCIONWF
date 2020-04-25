@@ -26,10 +26,12 @@
 
         'Desplegable
         cmbPropietario.DataBindings.Add("SelectedValue", BindingSource1, "IDPROPIETARIO", True)
+
         'Valores del desplegable
         cmbPropietario.DataSource = ds.Tables("MEMUSUARIOS")
         cmbPropietario.DisplayMember = "NOMBRE"
         cmbPropietario.ValueMember = "ID"
+
         'Console.WriteLine($"cmbPropietario.ValueMember={cmbPropietario.ValueMember}")
     End Sub
 
@@ -40,7 +42,7 @@
     End Sub
 
     Private Sub BindingSource1_CurrentChanged(sender As Object, e As EventArgs) Handles BindingSource1.CurrentChanged
-        'Utilizado para añadir un nuevo item.
+        ' Utilizado para añadir un nuevo item.
         ' No he acertado a ponerlo en un evento más adecuado
         Try
             Dim row = BindingSource1.Current.Row

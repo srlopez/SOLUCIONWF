@@ -1,27 +1,27 @@
 ﻿Public Class FormUsuarios
 
     Dim ds As DataSet = New DataSet()
-    'Dim usuario As DataRow
 
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles Me.Load
         ' test
-        Controladordatos.TestConexion()
+        'ControladorDatos.TestConexion()
 
         ' fill dataset
-        Controladordatos.FillUsuarios(ds, "USUARIOS")
-        'LogUsuarios()
+        ControladorDatos.FillUsuarios(ds, "PROPIETARIOS")
+        ControladorDatos.FillMascotas(ds, "MASCOTAS")
 
-        Controladordatos.FillMascotas(ds, "MASCOTAS")
+        'Lista de Propietarios
+        LogPropietarios()
 
-        ds.Relations.Add("PROPIETARIOS",
-            ds.Tables("USUARIOS").Columns("ID"),
+        ds.Relations.Add("ES_DUEÑO_DE",
+            ds.Tables("PROPIETARIOS").Columns("ID"),
             ds.Tables("MASCOTAS").Columns("IDPROPIETARIO"))
 
         'Control BindingSource
         BindingSourcePropietarios = New BindingSource()
         BindingSourcePropietarios.DataSource = ds
 
-        BindingSourcePropietarios.DataMember = "USUARIOS"
+        BindingSourcePropietarios.DataMember = "PROPIETARIOS"
 
         'Control BindingNavigatorUsuarios
         BindingNavigatorUsuarios.BindingSource = BindingSourcePropietarios
@@ -34,12 +34,12 @@
         'Control DataGridViewMascotas
         'https://stackoverflow.com/questions/6063902/datagridview-parent-to-child-database-relation-updating-child-datagridview-d
         DataGridViewMascotas.DataSource = BindingSourcePropietarios
-        DataGridViewMascotas.DataMember = "PROPIETARIOS"
+        DataGridViewMascotas.DataMember = "ES_DUEÑO_DE"
     End Sub
 
-    Sub LogUsuarios()
+    Sub LogPropietarios()
         Dim i = 0
-        Dim dt = ds.Tables("USUARIOS")
+        Dim dt = ds.Tables("PROPIETARIOS")
         Dim row As DataRow
         For i = 0 To dt.Rows.Count - 1
             row = dt.Rows(i)
@@ -51,10 +51,6 @@
     Private Sub ButtonCerrar_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
-
-
-
-
 
     Private Sub DataGridViewMascotas_UserAddedRow(sender As Object, e As DataGridViewRowEventArgs) Handles DataGridViewMascotas.UserAddedRow
         'DataGridViewRow

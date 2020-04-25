@@ -173,7 +173,7 @@ Module ControladorDatos
     Sub FillMascotas(ByRef ds As DataSet, tabla As String)
         Try
             Using conn = Connection()
-                Dim qrySelect = " SELECT * FROM MASCOTAS"
+                Dim qrySelect = "SELECT * FROM MASCOTAS"
                 Dim adapter = DataAdapter()
                 adapter.SelectCommand = Command(qrySelect, conn)
                 adapter.Fill(ds, tabla)
