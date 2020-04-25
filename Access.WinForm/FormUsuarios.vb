@@ -82,4 +82,18 @@
         BindingSourcePropietarios.EndEdit()
         UpdateData(ds, "MASCOTAS")
     End Sub
+
+    Private Sub DataGridViewMascotas_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewMascotas.RowEnter
+        If DataGridViewMascotas.CurrentRow Is Nothing Then Return
+        For i = 0 To DataGridViewMascotas.Rows(e.RowIndex).Cells.Count - 1
+            DataGridViewMascotas(i, e.RowIndex).Style.BackColor =
+            Color.CornflowerBlue
+        Next
+    End Sub
+
+    Private Sub DataGridViewMascotas_RowLeave(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewMascotas.RowLeave
+        For i = 0 To DataGridViewMascotas.Rows(e.RowIndex).Cells.Count - 1
+            DataGridViewMascotas(i, e.RowIndex).Style.BackColor = Color.Empty
+        Next
+    End Sub
 End Class
