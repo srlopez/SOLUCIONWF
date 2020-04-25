@@ -253,7 +253,7 @@ Partial Class FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(731, 644)
+        Me.ClientSize = New System.Drawing.Size(714, 594)
         Me.Controls.Add(Me.lblBotones)
         Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.flPanel)

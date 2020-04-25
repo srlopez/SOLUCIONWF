@@ -5,13 +5,13 @@
 
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles Me.Load
         ' test
-        ControladorUsuarios.TestConexion()
+        Controladordatos.TestConexion()
 
         ' fill dataset
-        ControladorUsuarios.FillUsuarios(ds, "USUARIOS")
+        Controladordatos.FillUsuarios(ds, "USUARIOS")
         'LogUsuarios()
 
-        ControladorUsuarios.FillMascotas(ds, "MASCOTAS")
+        Controladordatos.FillMascotas(ds, "MASCOTAS")
 
         ds.Relations.Add("PROPIETARIOS",
             ds.Tables("USUARIOS").Columns("ID"),

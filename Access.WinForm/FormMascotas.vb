@@ -4,8 +4,8 @@
     Private Sub FormMascotas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtID.Enabled = False
 
-        ControladorUsuarios.FillMascotas(ds, "MEMMASCOTAS")
-        ControladorUsuarios.FillUsuarios(ds, "MEMUSUARIOS")
+        ControladorDatos.FillMascotas(ds, "MEMMASCOTAS")
+        ControladorDatos.FillUsuarios(ds, "MEMUSUARIOS")
 
         ds.Relations.Add("PROPIETARIOS",
             ds.Tables("MEMUSUARIOS").Columns("ID"),

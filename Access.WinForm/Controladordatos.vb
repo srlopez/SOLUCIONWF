@@ -1,12 +1,13 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.OleDb
 Imports System.Configuration
+Imports System.IO
 
-Module ControladorUsuarios
+Module ControladorDatos
     Private row As String
     Private connectionstring As String =
         "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BASE.accdb;Persist Security Info=False"
-    '       "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\BASE.accdb;Persist Security Info=False"
+
     'Instalar https://www.microsoft.com/es-ES/download/details.aspx?id=13255
     ' https://www.microsoft.com/en-us/download/confirmation.aspx?id=54920
     ' https://www.youtube.com/watch?v=do0eh9Vu7nQ
@@ -15,8 +16,10 @@ Module ControladorUsuarios
     Private usuariosDAdapter As Object
 
     Private Function Connection() As OleDbConnection 'SqlConnection
+        Dim connStringInFile As String = File.ReadAllText("..\..\database.txt")
+        Console.WriteLine(connStringInFile)
         'Return New SqlClient.SqlConnection(connectionstring) 'ADO.NET no funciona con accdb
-        Return New OleDbConnection(connectionstring)
+        Return New OleDbConnection(connStringInFile) 'connectionstring)
 
     End Function
 

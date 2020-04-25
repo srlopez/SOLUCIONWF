@@ -9,8 +9,30 @@ Public Class FormBase
         txtNombre.Text = ""
         txtFecha.Text = ""
         txtEmail.Text = ""
+
         lstUsuarios.Items.Clear()
+        cmbSelect.Items.Clear()
+        flPanel.Controls.Clear()
+
         btnDelete.Enabled = False
+    End Sub
+
+    Sub SetForm(id As String)
+        Dim usuario = SelectUsuariosByID(id)
+        txtID.Text = usuario.id
+        txtNombre.Text = usuario.nombre
+        txtFecha.Text = usuario.fecha '.ToString("d", DateTimeFormatInfo.InvariantInfo)
+        txtEmail.Text = usuario.email
+
+        btnDelete.Enabled = True
+
+        'Establecemos el elemento seleccionado
+        cmbSelect.SelectedItem = usuario.nombre
+        lstUsuarios.SelectedItem = usuario.nombre
+        For Each btn In flPanel.Controls
+            If btn.Text = usuario.nombre Then btn.Select()
+        Next
+
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -55,22 +77,7 @@ Public Class FormBase
             cmbSelect.Items.Add(item.Item2)
             flPanel.Controls.Add(CreateButton(item.Item2, item.Item1))
         Next
-    End Sub
 
-    Private Sub lstUsuarios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUsuarios.SelectedIndexChanged
-        Console.WriteLine(lstUsuarios.SelectedItem)
-        Console.WriteLine(lstUsuarios.SelectedIndex)
-        Console.WriteLine(usuarios(lstUsuarios.SelectedIndex).Item1)
-
-
-        Dim id = usuarios(lstUsuarios.SelectedIndex).Item1
-        Dim usuario = SelectUsuariosByID(id)
-        txtID.Text = usuario.id
-        txtNombre.Text = usuario.nombre
-        txtFecha.Text = usuario.fecha '.ToString("d", DateTimeFormatInfo.InvariantInfo)
-        txtEmail.Text = usuario.email
-
-        btnDelete.Enabled = True
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -84,17 +91,15 @@ Public Class FormBase
 
     Private Sub cmbSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbSelect.SelectedIndexChanged
         Dim id = usuarios(cmbSelect.SelectedIndex).Item1 'ID
-        Dim usuario = SelectUsuariosByID(id)
-        txtID.Text = usuario.id
-        txtNombre.Text = usuario.nombre
-        txtFecha.Text = usuario.fecha '.ToString("d", DateTimeFormatInfo.InvariantInfo)
-        txtEmail.Text = usuario.email
-
-        btnDelete.Enabled = True
+        SetForm(id)
     End Sub
 
-    Private Sub btnAbrirMain_Click(sender As Object, e As EventArgs) Handles btnAbrirMain.Click
-        FormUsuarios.Show()
+    Private Sub lstUsuarios_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUsuarios.SelectedIndexChanged
+        Console.WriteLine(lstUsuarios.SelectedItem)
+        Console.WriteLine(lstUsuarios.SelectedIndex)
+        Console.WriteLine(usuarios(lstUsuarios.SelectedIndex).Item1)
+
+        SetForm(usuarios(lstUsuarios.SelectedIndex).Item1)
     End Sub
 
     Private Sub theButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -104,6 +109,7 @@ Public Class FormBase
                "ID: " + sender.tag)
         Console.WriteLine(sender)
         Console.WriteLine(e)
+        SetForm(sender.tag)
     End Sub
 
     Function CreateButton(nombre As String, id As String) As Button
@@ -127,5 +133,8 @@ Public Class FormBase
         Return myCrtl
     End Function
 
+    Private Sub btnAbrirMain_Click(sender As Object, e As EventArgs) Handles btnAbrirMain.Click
+        FormUsuarios.Show()
+    End Sub
 
 End Class
