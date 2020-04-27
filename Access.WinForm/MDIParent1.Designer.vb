@@ -66,6 +66,7 @@ Partial Class MDIParent
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MiFormularioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip = New System.Windows.Forms.ToolStrip()
         Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -78,7 +79,8 @@ Partial Class MDIParent
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Opcion4ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SubMenu1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -86,7 +88,7 @@ Partial Class MDIParent
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.EditMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.HelpMenu, Me.MiFormularioToolStripMenuItem, Me.BaseToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.EditMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.HelpMenu, Me.MiFormularioToolStripMenuItem, Me.BaseToolStripMenuItem, Me.Opcion4ToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
@@ -376,6 +378,12 @@ Partial Class MDIParent
         Me.MiFormularioToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.MiFormularioToolStripMenuItem.Text = "Mascotas"
         '
+        'BaseToolStripMenuItem
+        '
+        Me.BaseToolStripMenuItem.Name = "BaseToolStripMenuItem"
+        Me.BaseToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.BaseToolStripMenuItem.Text = "Base"
+        '
         'ToolStrip
         '
         Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.OpenToolStripButton, Me.SaveToolStripButton, Me.ToolStripSeparator1, Me.PrintToolStripButton, Me.PrintPreviewToolStripButton, Me.ToolStripSeparator2, Me.HelpToolStripButton})
@@ -464,11 +472,18 @@ Partial Class MDIParent
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
         '
-        'BaseToolStripMenuItem
+        'Opcion4ToolStripMenuItem
         '
-        Me.BaseToolStripMenuItem.Name = "BaseToolStripMenuItem"
-        Me.BaseToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
-        Me.BaseToolStripMenuItem.Text = "Base"
+        Me.Opcion4ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubMenu1ToolStripMenuItem})
+        Me.Opcion4ToolStripMenuItem.Name = "Opcion4ToolStripMenuItem"
+        Me.Opcion4ToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.Opcion4ToolStripMenuItem.Text = "Opcion4"
+        '
+        'SubMenu1ToolStripMenuItem
+        '
+        Me.SubMenu1ToolStripMenuItem.Name = "SubMenu1ToolStripMenuItem"
+        Me.SubMenu1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SubMenu1ToolStripMenuItem.Text = "SubMenu1"
         '
         'MDIParent
         '
@@ -546,4 +561,6 @@ Partial Class MDIParent
     Friend WithEvents ToolsMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MiFormularioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BaseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Opcion4ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SubMenu1ToolStripMenuItem As ToolStripMenuItem
 End Class

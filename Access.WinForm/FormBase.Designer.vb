@@ -42,6 +42,7 @@ Partial Class FormBase
         Me.flPanel = New System.Windows.Forms.FlowLayoutPanel()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.lblBotones = New System.Windows.Forms.Label()
+        Me.lblClicks = New System.Windows.Forms.Label()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -249,11 +250,23 @@ Partial Class FormBase
         Me.lblBotones.TabIndex = 22
         Me.lblBotones.Text = "Botones dinámicos"
         '
+        'lblClicks
+        '
+        Me.lblClicks.AutoSize = True
+        Me.lblClicks.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClicks.ForeColor = System.Drawing.Color.OrangeRed
+        Me.lblClicks.Location = New System.Drawing.Point(415, 13)
+        Me.lblClicks.Name = "lblClicks"
+        Me.lblClicks.Size = New System.Drawing.Size(152, 21)
+        Me.lblClicks.TabIndex = 23
+        Me.lblClicks.Text = "Contador de Clicks"
+        '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(714, 594)
+        Me.Controls.Add(Me.lblClicks)
         Me.Controls.Add(Me.lblBotones)
         Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.flPanel)
@@ -301,4 +314,5 @@ Partial Class FormBase
     Friend WithEvents flPanel As FlowLayoutPanel
     Friend WithEvents picLogo As PictureBox
     Friend WithEvents lblBotones As Label
+    Friend WithEvents lblClicks As Label
 End Class

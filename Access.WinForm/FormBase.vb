@@ -3,6 +3,10 @@
 Public Class FormBase
 
     Dim usuarios As New ArrayList
+    Dim nClicks = 0
+
+    'Dim usuarios As (id As String, nombre As String, fecha As Date, email As String)()
+    'Manejo de tuplas http://www.elguille.info/NET/dotnet/como-usar-las-tuplas-en-visual-basic-y-c-sharp-con-net-core-2-1-o-visual-studio-2017-con-net-4-7-2.aspx
 
     Sub ClearForm()
         txtID.Text = ""
@@ -65,6 +69,8 @@ Public Class FormBase
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        nClicks += 1
+        lblClicks.Text = $"número de Clicks = {nClicks}"
         usuarios.Clear()
 
         lstUsuarios.Items.Clear()
@@ -136,5 +142,6 @@ Public Class FormBase
     Private Sub btnAbrirMain_Click(sender As Object, e As EventArgs) Handles btnAbrirMain.Click
         FormUsuarios.Show()
     End Sub
+
 
 End Class

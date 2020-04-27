@@ -98,4 +98,9 @@ Public Class MDIParent
         'FormBase.MdiParent = Me
         FormBase.Show()
     End Sub
+
+    Private Sub SubMenu1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubMenu1ToolStripMenuItem.Click
+        'FormMascotas.MdiParent = Me
+        FormMascotas.Show()
+    End Sub
 End Class
