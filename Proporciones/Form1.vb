@@ -160,15 +160,14 @@
             Else
                 n = 1
             End If
-            If i = list.Count - 1 Then
-                Dim a = 0
-                If l(a).Count <> 0 Then a = 1
-                n = a
+            'control: ultimo elemento y las lista 1 vacia
+            If i = list.Count - 1 And
+                l(1).Count = 0 Then ' La lista 1 no tiene elementos
+                n = 1
             End If
             ultimo = list(i)
             l(n).Add(ultimo)
             s(n) += ultimo.valor
-
         Next
         s0 = s(0)
         s1 = s(1)
